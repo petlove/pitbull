@@ -5,6 +5,7 @@ require 'pitbull/version'
 require 'pitbull/configuration'
 require 'pitbull/configuration/static'
 require 'pitbull/strategies/static'
+require 'pitbull/railtie' if defined?(Rails)
 
 module Pitbull
   Configuration::SETTINGS.each do |setting|
