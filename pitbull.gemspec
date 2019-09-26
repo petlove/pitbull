@@ -18,7 +18,7 @@ Gem::Specification.new do |spec|
   spec.files         = Dir['{lib}/**/*', 'CHANGELOG.md', 'MIT-LICENSE', 'README.md']
   spec.required_ruby_version = '>= 2.5.1'
 
-  spec.add_dependency 'rails', '>= 5.2.3'
+  spec.add_dependency 'activesupport', '>= 5.0'
 
   spec.add_development_dependency 'bundler', '~> 2.0'
   spec.add_development_dependency 'rake', '~> 10.0'
