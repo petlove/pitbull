@@ -8,6 +8,8 @@ require 'pitbull/configuration/static'
 require 'pitbull/strategies/static'
 
 module Pitbull
+  require 'pitbull/railtie' if defined?(Rails)
+
   Configuration::SETTINGS.each do |setting|
     send(:define_singleton_method, setting, -> { configuration.send(setting) })
   end
