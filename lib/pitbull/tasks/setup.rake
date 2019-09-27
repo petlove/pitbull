@@ -2,7 +2,7 @@
 
 require 'fileutils'
 
-INITIALIZER = 'config/initializers/pitbull.rb'
+SETTINGS = 'config/initializers/pitbull.rb'
 
 namespace :pitbull do
   desc 'Install the initializer to the gem Pitbull works'
@@ -12,8 +12,8 @@ namespace :pitbull do
 end
 
 def create_initializer
-  FileUtils.mkdir_p(File.dirname(INITIALIZER))
-  File.open(INITIALIZER, 'w') { |file| file << settings }
+  FileUtils.mkdir_p(File.dirname(SETTINGS))
+  File.open(SETTINGS, 'w') { |file| file << settings }
 end
 
 def settings
