@@ -2,6 +2,6 @@
 
 require 'spec_helper'
 
-RSpec.describe ApiStaticController, type: :controller do
+RSpec.describe ChecksController, type: :controller do
   it_behaves_like 'strategies_static'
 end

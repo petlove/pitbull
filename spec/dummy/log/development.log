@@ -282,3 +282,59 @@ Processing by ApiStaticController#check as HTML
 Completed 200 OK in 0ms (Allocations: 90)
 
 
+Processing by ApiStaticController#check as HTML
+Filter chain halted as :authenticate rendered or redirected
+Completed 401 Unauthorized in 0ms (Allocations: 138)
+
+
+Processing by ApiStaticController#check as HTML
+Filter chain halted as :authenticate rendered or redirected
+Completed 401 Unauthorized in 0ms (Allocations: 79)
+
+
+Processing by ApiStaticController#check as HTML
+Completed 200 OK in 0ms (Allocations: 90)
+
+
+Processing by ApiStaticController#check as HTML
+Filter chain halted as :authenticate rendered or redirected
+Completed 401 Unauthorized in 0ms (Allocations: 138)
+
+
+Processing by ApiStaticController#check as HTML
+Filter chain halted as :authenticate rendered or redirected
+Completed 401 Unauthorized in 0ms (Allocations: 79)
+
+
+Processing by ApiStaticController#check as HTML
+Completed 200 OK in 0ms (Allocations: 90)
+
+
+Processing by ApiStaticController#check as HTML
+Filter chain halted as :authenticate rendered or redirected
+Completed 401 Unauthorized in 0ms (Allocations: 138)
+
+
+Processing by ApiStaticController#check as HTML
+Filter chain halted as :authenticate rendered or redirected
+Completed 401 Unauthorized in 0ms (Allocations: 79)
+
+
+Processing by ApiStaticController#check as HTML
+Completed 200 OK in 0ms (Allocations: 90)
+
+
+Processing by ChecksController#check as HTML
+Filter chain halted as :authenticate rendered or redirected
+Completed 401 Unauthorized in 0ms (Allocations: 116)
+
+
+Processing by ChecksController#check as HTML
+Filter chain halted as :authenticate rendered or redirected
+Completed 401 Unauthorized in 0ms (Allocations: 79)
+
+
+Processing by ChecksController#check as HTML
+Completed 200 OK in 0ms (Allocations: 83)
+
+

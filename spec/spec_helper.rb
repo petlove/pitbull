@@ -11,6 +11,7 @@ require 'rspec/rails'
 require 'pitbull'
 
 require 'support/helpers/static_authentication_helper'
+require 'support/shared/strategies_static_spec'
 
 RSpec.configure do |config|
   config.disable_monkey_patching!

@@ -36,7 +36,7 @@ end
 
 Send a header with the name equal `config.static.header` with the value equal `config.static.token`.
 
-After it, you need to include `Pitbull::Strategies::Static` in your controller or inherit the controller `Pitbull::StratStrategiesegy::StaticController`.
+After it, you need to include `Pitbull::Strategies::Static` in your controller or inherit the controller `Pitbull::Strategies::StaticController`.
 
 
 ## Contributing
