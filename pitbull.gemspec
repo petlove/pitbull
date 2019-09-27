@@ -10,8 +10,8 @@ Gem::Specification.new do |spec|
   spec.authors       = ['linqueta']
   spec.email         = ['lincolnrodrs@gmail.com']
 
-  spec.summary       = 'A simple way to authenticate'
-  spec.description   = 'A simple way to authenticate'
+  spec.summary       = 'A simple way to authenticate in APIs'
+  spec.description   = 'A simple way to authenticate in APIs'
   spec.homepage      = 'https://https://github.com/petlove/pitbull'
   spec.license       = 'MIT'
 
