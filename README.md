@@ -11,7 +11,7 @@ A simple way to authenticate in APIs
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'pitbull', github: 'petlove/pitbull'
+gem 'pitbull', git: 'https://github.com/petlove/pitbull'
 ```
 
 and run:
