@@ -6,12 +6,12 @@ module Pitbull
       extend ::ActiveSupport::Concern
 
       included do
-        before_action :static_authorized
+        before_action :static_authorize
       end
 
       private
 
-      def static_authorized
+      def static_authorize
         head :unauthorized unless header && token && header == token
       end
 
