@@ -11,7 +11,11 @@ module Pitbull
     end
 
     def after_configure
-      SETTINGS.each { |_, value| value.send(:after_configure) if value.respond_to?(:after_configure) }
+      SETTINGS.each do |setting|
+        next unless send(setting).respond_to?(:after_configure)
+
+        send(setting).send(:after_configure)
+      end
     end
 
     private
@@ -22,5 +26,5 @@ module Pitbull
   end
 end
 
-require 'pitbull/configuration/static'
-require 'pitbull/configuration/authorization_api'
+require_relative 'configuration/static'
+require_relative 'configuration/authorization_api'

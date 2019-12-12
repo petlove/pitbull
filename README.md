@@ -58,7 +58,7 @@ Pitbull.configure do |config|
   # Required - The header's name where it will send your jwt token to your authorization's server
   # config.authorization_api.authorization_token_header = 'Authorization'
   # Required - How to get your jwt token (it must be either Proc or Lambda)
-  # config.authorization_api.authorization_token_value = -> { request.headers['Authorization'] }
+  # config.authorization_api.authorization_token_value = ->(request) { request.headers['Authorization'] }
 end
 ```
 

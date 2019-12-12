@@ -2,7 +2,12 @@
 
 require 'bundler/setup'
 require 'support/configs/simple_cov_config'
+require 'support/configs/vcr_config'
+
 SimpleCovConfig.configure
+
+require 'dotenv'
+Dotenv.load('.env.test')
 
 require File.expand_path('../spec/dummy/config/environment.rb', __dir__)
 ENV['RAILS_ROOT'] ||= File.dirname(__FILE__) + '../../../spec/dummy'
@@ -10,8 +15,11 @@ ENV['RAILS_ROOT'] ||= File.dirname(__FILE__) + '../../../spec/dummy'
 require 'rspec/rails'
 require 'pitbull'
 
-require 'support/helpers/static_authentication_helper'
-require 'support/shared/strategies_static_spec'
+VCRConfig.configure
+
+require 'support/helpers/static_helper'
+require 'support/shared/strategies_static'
+require 'support/shared/strategies_authorization_api'
 
 RSpec.configure do |config|
   config.disable_monkey_patching!
@@ -20,5 +28,5 @@ RSpec.configure do |config|
     c.syntax = :expect
   end
 
-  config.include StaticAuthenticationHelper
+  config.include StaticHelper
 end

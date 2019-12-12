@@ -5,10 +5,10 @@ require 'spec_helper'
 RSpec.shared_examples_for 'strategies_static' do
   describe '#check' do
     subject { get :check }
-    let(:authentication) { nil }
+    let(:authorization) { nil }
 
     before do
-      authentication
+      authorization
       subject
     end
 
@@ -17,7 +17,7 @@ RSpec.shared_examples_for 'strategies_static' do
     end
 
     context 'with token in header' do
-      let(:authentication) { static_authenticate(token) }
+      let(:authorization) { static_authorize(token) }
 
       context 'with different value' do
         let(:token) { 'test' }

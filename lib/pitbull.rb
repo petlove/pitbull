@@ -6,6 +6,7 @@ require 'pitbull/version'
 require 'pitbull/engine'
 require 'pitbull/configuration'
 require 'pitbull/strategies/static'
+require 'pitbull/strategies/authorization_api'
 
 module Pitbull
   require 'pitbull/railtie' if defined?(Rails)

@@ -11,5 +11,5 @@ Pitbull.configure do |config|
   config.authorization_api.access_token_value = ENV['AUTHORIZATION_API_ACCESS_TOKEN']
   config.authorization_api.success_http_code = 200
   config.authorization_api.authorization_token_header = 'Authorization'
-  config.authorization_api.authorization_token_value = -> { request.headers['Authorization'] }
+  config.authorization_api.authorization_token_value = ->(request) { request.headers['Authorization'] }
 end

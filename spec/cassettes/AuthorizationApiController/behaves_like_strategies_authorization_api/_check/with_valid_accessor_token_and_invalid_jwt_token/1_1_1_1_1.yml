@@ -1,0 +1,71 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: ENV[AUTHORIZATION_API_URL]
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      X-Rottweiler-Access-Token:
+      - ENV[AUTHORIZATION_API_ACCESS_TOKEN]
+      Authorization:
+      - 1.2.3
+      User-Agent:
+      - Faraday v0.17.1
+      Content-Length:
+      - '0'
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 401
+      message: Unauthorized
+    headers:
+      Date:
+      - Thu, 12 Dec 2019 21:47:07 GMT
+      Content-Type:
+      - text/html
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=d37e5a7921f20535d225037bc5416f60c1576187226; expires=Sat, 11-Jan-20
+        21:47:06 GMT; path=/; domain=.petlove.com.br; HttpOnly
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Cache-Control:
+      - no-cache
+      X-Request-Id:
+      - 5dc66ffe-3ce3-4a51-9afe-0ad4b685f29e
+      X-Runtime:
+      - '0.003542'
+      Cf-Cache-Status:
+      - DYNAMIC
+      Expect-Ct:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 5442e5187ee4f5e3-GRU
+    body:
+      encoding: UTF-8
+      string: ''
+    http_version: 
+  recorded_at: Thu, 12 Dec 2019 21:47:05 GMT
+recorded_with: VCR 5.0.0
