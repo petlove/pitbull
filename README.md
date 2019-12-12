@@ -20,6 +20,18 @@ and run:
 rails pitbull:install
 ```
 
+## Using
+
+To use any strategy you need to set the configs on the initializer and include the strategy in your controller. You also can extend a Pitbull strategy controller.
+
+Available strategies
+
+| name | mixin | controller | how it works |
+|------|-------|------------|--------------|
+| Static | `Pitbull::Strategies::Static` | `Pitbull::Strategies::StaticController` | It verifies if the request contains a header with the name defined in `config.static.header` with the value set
+in `config.static.token`. If the values are different it returns an unauthorized response (HTTP code 401). |
+| Authorization Api | `Pitbull::Strategies::AuthorizationApi` | `Pitbull::Strategies::AuthorizationApiController` | It makes a request to your authorization server through settings defined in initializer. If the response HTTP code is different of success HTTP code setting it returns an unauthorized response (HTTP code 401). If it has a successful response, the response will be set in `@authorization_response`. |
+
 ## Settings
 Set the settings in the file _config/initializers/pitbull.rb_:
 
@@ -27,17 +39,24 @@ Set the settings in the file _config/initializers/pitbull.rb_:
 # frozen_string_literal: true
 
 Pitbull.configure do |config|
-  config.static.header = Pitbull.static.default_header('MyAppName')
-  config.static.token = 'my static token value'
+  ## --- Static Strategy ---
+  # The application access token header's name for static authorization
+  # You can choose the name or use the helper Pitbull.static.default_header passing your app's name
+  # config.static.header = Pitbull.static.default_header('MyAppName') # X-MyAppName-Access-Token
+  # The application access token header's value for static authorization
+  # config.static.token = '4c4074dc2243f7f00e98bce78547a67be3058bada3a6fbd4462c7684b2841e9b'
+
+  ## --- Authorization Api Strategy ---
+  # The authorization api's url of your authorization's server
+  #config.authorization_api.url = ENV['AUTHORIZATION_API_URL'] # https://my-authorization-api.domain.com
+  # Optional - The authorization api's static access token header of your authorization's server
+  # config.authorization_api.access_token_header = 'X-MyAuthorizationApi-Access-Token'
+  # Optional - The authorization api's static access token value of your authorization's server
+  # config.authorization_api.access_token_value = '4c4074dc2243f7f00e98bce78547a67be3058bada3a6fbd4462c7684b2841e9b'
+  # The authorization api's http success code
+  # config.authorization_api.success_http_code = 200
 end
 ```
-
-## Static Authentication
-
-Send a header with the name equal to `config.static.header` with the value equal to `config.static.token`.
-
-After it, you need to include `Pitbull::Strategies::Static` in your controller or inherit the controller `Pitbull::Strategies::StaticController`.
-
 
 ## Contributing
 
