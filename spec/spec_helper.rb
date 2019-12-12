@@ -4,6 +4,8 @@ require 'bundler/setup'
 require 'support/configs/simple_cov_config'
 require 'support/configs/vcr_config'
 
+require 'faker'
+
 SimpleCovConfig.configure
 
 require 'dotenv'
