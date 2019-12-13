@@ -3,7 +3,6 @@
 require 'active_support/all'
 require 'falcon'
 require 'pitbull/version'
-require 'pitbull/engine'
 require 'pitbull/configuration'
 require 'pitbull/strategies/static'
 require 'pitbull/strategies/authorization_api'
