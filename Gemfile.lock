@@ -8,7 +8,7 @@ GIT
 PATH
   remote: .
   specs:
-    pitbull (1.0.1)
+    pitbull (2.0.0)
       activesupport (>= 5.0)
       falcon
 
