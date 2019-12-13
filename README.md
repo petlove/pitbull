@@ -26,10 +26,10 @@ To use any strategy you need to set the configs on the initializer and include t
 
 Available strategies
 
-| name | mixin | controller | how it works |
-|------|-------|------------|--------------|
-| Static | `Pitbull::Strategies::Static` | `Pitbull::Strategies::StaticController` | It needs to set `before_action :static_authorize` in your controller. It verifies if the request contains a header with the name defined in `config.static.header` with the value set in `config.static.token`. If the values are different it returns an unauthorized response (HTTP code 401). |
-| Authorization Api | `Pitbull::Strategies::AuthorizationApi` | `Pitbull::Strategies::AuthorizationApiController` | It needs to set `before_action :authorization_api` in your controller. It makes a request to your authorization server through settings defined in initializer. If the response HTTP code is different of success HTTP code setting it returns an unauthorized response (HTTP code 401). If it has a successful response, the response will be set in `@authorization_response`. |
+| name | mixin | how it works |
+|------|-------|--------------|
+| Static | `Pitbull::Strategies::Static` | It needs to set `before_action :authorize_by_static` in your controller. It verifies if the request contains a header with the name defined in `config.static.header` with the value set in `config.static.token`. If the values are different it returns an unauthorized response (HTTP code 401). |
+| Authorization Api | `Pitbull::Strategies::AuthorizationApi` | It needs to set `before_action :authorize_by_authorization_api` in your controller. It makes a request to your authorization server through settings defined in initializer. If the response HTTP code is different of success HTTP code setting it returns an unauthorized response (HTTP code 401). If it has a successful response, the response will be set in `@authorization_response`. |
 
 ## Settings
 Set the settings in the file _config/initializers/pitbull.rb_:

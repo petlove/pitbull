@@ -7,7 +7,7 @@ module Pitbull
     module AuthorizationApi
       extend ::ActiveSupport::Concern
 
-      def authorization_api
+      def authorize_by_authorization_api
         Authorizer.perform(request)
                   .then { |res| @authorization_response = res.body }
       rescue Pitbull::Strategies::AuthorizationApi::Authorizer::Unauthorized

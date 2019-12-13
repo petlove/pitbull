@@ -5,7 +5,7 @@ module Pitbull
     module Static
       extend ::ActiveSupport::Concern
 
-      def static_authorize
+      def authorize_by_static
         head :unauthorized unless header && token && header == token
       end
 
