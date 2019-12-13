@@ -1,0 +1,73 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: ENV[AUTHORIZATION_API_URL]
+    body:
+      encoding: UTF-8
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      X-Rottweiler-Access-Token:
+      - ENV[AUTHORIZATION_API_ACCESS_TOKEN]
+      Authorization:
+      - ENV[AUTHORIZATION_TOKEN]
+      User-Agent:
+      - Faraday v0.17.1
+      Content-Length:
+      - '0'
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 12 Dec 2019 21:47:07 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Set-Cookie:
+      - __cfduid=d142079edccd0ca688808a61ca88817af1576187227; expires=Sat, 11-Jan-20
+        21:47:07 GMT; path=/; domain=.petlove.com.br; HttpOnly
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Etag:
+      - W/"9297f9a6ba35716cbc629abce5e23f60"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 4fc01773-2bcd-474b-b026-4cfd75460ad2
+      X-Runtime:
+      - '0.003452'
+      Cf-Cache-Status:
+      - DYNAMIC
+      Expect-Ct:
+      - max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 5442e51c5f35eed2-GRU
+    body:
+      encoding: ASCII-8BIT
+      string: '{"aud":"jackal","exp":1577395449,"iat":1576185849,"name":"","sub":"beagle_f0953c4f27c3caf6dbb5d89f65736b9ed8f5464e9bbc5bd75e0778451daa30d0","iss":"ENV[AUTHORIZATION_API_NAME]"}'
+    http_version: 
+  recorded_at: Thu, 12 Dec 2019 21:47:06 GMT
+recorded_with: VCR 5.0.0

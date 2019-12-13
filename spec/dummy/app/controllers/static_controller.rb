@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class ApiStaticController < ApplicationController
+class StaticController < ApplicationController
   include Pitbull::Strategies::Static
 
   def check

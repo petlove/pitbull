@@ -1,11 +1,12 @@
 # frozen_string_literal: true
 
 require 'active_support/all'
+require 'falcon'
 require 'pitbull/version'
 require 'pitbull/engine'
 require 'pitbull/configuration'
-require 'pitbull/configuration/static'
 require 'pitbull/strategies/static'
+require 'pitbull/strategies/authorization_api'
 
 module Pitbull
   require 'pitbull/railtie' if defined?(Rails)
@@ -16,6 +17,7 @@ module Pitbull
 
   def self.configure
     yield(configuration)
+    configuration.after_configure
   end
 
   def self.configuration

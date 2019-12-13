@@ -3,3 +3,6 @@ TODO
 /coverage/*
 .rspec_status
 *.gem
+/spec/dummy/log/*
+/spec/dummy/tmp/*
+.env.test
