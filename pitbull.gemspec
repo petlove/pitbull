@@ -19,7 +19,7 @@ Gem::Specification.new do |spec|
   spec.required_ruby_version = '>= 2.6'
 
   spec.add_dependency 'activesupport', '>= 5.0'
-  spec.add_dependency 'falcon'
+  spec.add_dependency 'katinguele', '>=1.0.5'
 
   spec.add_development_dependency 'bundler', '~> 2.0'
   spec.add_development_dependency 'dotenv', '~> 2.7.5'

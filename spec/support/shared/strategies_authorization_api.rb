@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require 'spec_helper'
+require 'pry'
 
 RSpec.shared_examples_for 'strategies_authorization_api' do
   describe '#check', :vcr do

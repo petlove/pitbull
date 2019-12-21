@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 require 'active_support/all'
-require 'falcon'
+require 'katinguele'
 require 'pitbull/version'
 require 'pitbull/configuration'
 require 'pitbull/strategies/static'
