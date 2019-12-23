@@ -21,7 +21,7 @@ RSpec.describe Pitbull::Configuration::AuthorizationApi, type: :model do
     before { subject }
 
     it do
-      expect(Falcon.configuration.options[:authorization_api]).to have_attributes(
+      expect(Eezee.configuration.services[:authorization_api]).to have_attributes(
         raise_error: true,
         url: url,
         headers: {

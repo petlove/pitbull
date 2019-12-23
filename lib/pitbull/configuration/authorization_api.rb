@@ -7,14 +7,14 @@ module Pitbull
                     :authorization_token_value
 
       def after_configure
-        Falcon.configure do |config|
-          config.add :authorization_api,
-                     raise_error: true,
-                     url: @url,
-                     headers: {
-                       'Content-Type' => 'application/json',
-                       @access_token_header => @access_token_value
-                     }.select { |k, _v| k }
+        Eezee.configure do |config|
+          config.add_service :authorization_api,
+                             raise_error: true,
+                             url: @url,
+                             headers: {
+                               'Content-Type' => 'application/json',
+                               @access_token_header => @access_token_value
+                             }.select { |k, _v| k }
         end
       end
     end

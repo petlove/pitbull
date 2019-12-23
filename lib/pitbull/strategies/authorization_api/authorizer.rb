@@ -6,17 +6,21 @@ module Pitbull
       class Authorizer
         class Unauthorized < StandardError; end
 
-        extend Falcon::Client
+        extend Eezee::Client
 
-        falcon_options :authorization_api
+        eezee_service :authorization_api, lazy: true
 
         class << self
-          def perform(request)
+          def perform(controller_req)
             post(
-              merge_in_headers: { params.authorization_token_header => params.authorization_token_value.call(request) }
-              .select { |k, _v| k },
-              after: ->(response) { handle(response) }
+              before: ->(req) { req.headers.merge!(authorization_header(controller_req)) },
+              after: ->(_req, res) { handle(res) }
             )
+          end
+
+          def authorization_header(controller_req)
+            { params.authorization_token_header => params.authorization_token_value.call(controller_req) }
+              .select { |k, _v| k }
           end
 
           private
