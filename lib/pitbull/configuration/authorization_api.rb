@@ -7,6 +7,8 @@ module Pitbull
                     :authorization_token_value
 
       def after_configure
+        return unless @url
+
         Eezee.configure do |config|
           config.add_service :authorization_api,
                              raise_error: true,
