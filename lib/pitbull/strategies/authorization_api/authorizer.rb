@@ -6,9 +6,9 @@ module Pitbull
       class Authorizer
         class Unauthorized < StandardError; end
 
-        extend Katinguele::Client
+        extend Eezee::Client
 
-        katinguele_service :authorization_api, lazy: true
+        eezee_service :authorization_api, lazy: true
 
         class << self
           def perform(controller_req)

@@ -7,11 +7,10 @@ module Pitbull
                     :authorization_token_value
 
       def after_configure
-        Katinguele.configure do |config|
+        Eezee.configure do |config|
           config.add_service :authorization_api,
                              raise_error: true,
                              url: @url,
-                             logger: true,
                              headers: {
                                'Content-Type' => 'application/json',
                                @access_token_header => @access_token_value
