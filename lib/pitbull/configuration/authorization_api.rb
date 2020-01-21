@@ -4,7 +4,7 @@ module Pitbull
   class Configuration
     class AuthorizationApi
       attr_accessor :url, :access_token_header, :access_token_value, :success_http_code, :authorization_token_header,
-                    :authorization_token_value
+                    :authorization_token_value, :protocol
 
       def after_configure
         return unless @url
@@ -12,6 +12,7 @@ module Pitbull
         Eezee.configure do |config|
           config.add_service :authorization_api,
                              raise_error: true,
+                             protocol: @protocol,
                              url: @url,
                              headers: {
                                'Content-Type' => 'application/json',
