@@ -31,6 +31,8 @@ def settings
       ## --- Authorization Api Strategy ---
       # Required - The authorization api's url of your authorization's server
       # config.authorization_api.url = ENV['AUTHORIZATION_API_URL'] # https://my-authorization-api.domain.com/authorize
+      # Optional - The authorization api's protocol
+      # config.authorization_api.protocol = 'https'
       # Optional - The authorization api's static access token header of your authorization's server
       # config.authorization_api.access_token_header = 'X-MyAuthorizationApi-Access-Token'
       # Optional - The authorization api's static access token value of your authorization's server
