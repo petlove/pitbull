@@ -80,7 +80,7 @@ GEM
     eezee (1.0.13)
       faraday (>= 0.17.0)
     erubi (1.9.0)
-    faker (2.10.2)
+    faker (2.11.0)
       i18n (>= 1.6, < 2)
     faraday (1.0.0)
       multipart-post (>= 1.2, < 3)
